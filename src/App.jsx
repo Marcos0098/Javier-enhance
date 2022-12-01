@@ -70,53 +70,60 @@ function App() {
     <div className="App">
       <div className='container-main'>
         <div className='container-item-selector'>
+          <div className='item-selector'>
           <h2>Select an item to enchant</h2>
-          <select onChange={(e) => handleChange(e.target.value)} value={weapon}>
-            <option selected disabled>Select your item</option>
-            {itemsData.name.map((item, index) => (<option key={item} className="itens" value={index}>{item}</option>))}
-          </select>
+            <select onChange={(e) => handleChange(e.target.value)} value={weapon}>
+              <option selected disabled>Select your item</option>
+              {itemsData.name.map((item, index) => (<option key={item} className="itens" value={index}>{item}</option>))}
+            </select>
 
-          <div className={active ? "selecaoClose" : "selecaoOpen"}>
-          
-          <h4>Select the level of enhancement</h4>
-          <form onSubmit={initialEnhancement}>
-            <input type="number" min={20} max={99} value={trys} onChange={(e) => setTrys(e.target.value)}/>
-            <input type='submit'value="Enhance" ></input>
-          </form>
+            <div className={active ? "selecaoClose" : "selecaoOpen"}>
+            
+            <h4>Select the level of enhancement</h4>
+            <form onSubmit={initialEnhancement}>
+              <input type="number" min={20} max={99} value={trys} onChange={(e) => setTrys(e.target.value)}/>
+              <input type='submit'value="Enhance" ></input>
+            </form>
+            </div>
+
+            <button onClick={refreshPage}>Reset</button>
           </div>
 
-          <button onClick={refreshPage}>Reset</button>
         </div>
 
         <div className='item-enchant'>
-          <div className='container-item-top'>
-            {weapon && <img src={itemsData.image[weapon]} alt="imgWeapon" />}
-            <h2>{resultado === "Sucesso" ?  <><h2 style={{color: "#9F4FF1"}}>Cursed</h2><h2>{itemsData.name[weapon]}</h2><h2 style={{color: "#9F4FF1"}}>{`+${trys}`}</h2></> : <><h2>{itemsData.name[weapon]}</h2><h2>{`+${trys}`}</h2></>}</h2>
-            <h4>Enhance: {success - failure > 0 ? `+${success - failure}` : success - failure}</h4>
-            <button onClick={aprimoramento}>Enhance Dark Magic (50% Success)</button>
-          </div>
-          <h3>Results</h3>
-          <div className='item-results'>
-            
-            <h4>Initial Enhancement</h4>
-            <p>{baseStat}</p>
-            <h4>Current Enhancement</h4>
-            <p style={{color:"#9F4FF1"}}>{trys}</p>
-            <h4>Enhancement Stones Used</h4>
-            <p>{stones}</p>
-            <h4>Territe Used</h4>
-            <p>{territe}</p>
-            <h4>Dark Crystals Used</h4>
-            <p>{cristalNegro}</p>
-            <h4>Attempts</h4>
-            <p>{tentativas}</p>
-            <h4>Success</h4>
-            <p style={{color:"#10B981"}}>{success}</p>
-            <h4>Failures</h4>
-            <p style={{color:"#EF4444"}}>{failure}</p>
+          <div className='container-item-main'>
+            <div className='container-item-top'>
+              {weapon != null ? <img src={itemsData.image[weapon]} alt="imgWeapon" /> : <img src={kingdom} alt="imgWeapon" />}
+              <h2>{resultado === "Sucesso" ?  <><h2 style={{color: "#9F4FF1"}}>Cursed</h2><h2>{itemsData.name[weapon]}</h2><h2 style={{color: "#9F4FF1"}}>{`+${trys}`}</h2></> : <><h2>{itemsData.name[weapon]}</h2><h2>{`+${trys}`}</h2></>}</h2>
+              <h4>Enhance: {success - failure > 0 ? `+${success - failure}` : success - failure}</h4>
+              <button onClick={aprimoramento}>Enhance Dark Magic (50% Success)</button>
+            </div>
+            <h3>Results</h3>
+            <div className='item-results'>
+              
+              <h4>Initial Enhancement</h4>
+              <p>{baseStat}</p>
+              <h4>Current Enhancement</h4>
+              <p style={{color:"#9F4FF1"}}>{trys}</p>
+              <h4>Enhancement Stones Used</h4>
+              <p>{stones}</p>
+              <h4>Territe Used</h4>
+              <p>{territe}</p>
+              <h4>Dark Crystals Used</h4>
+              <p>{cristalNegro}</p>
+              <h4>Attempts</h4>
+              <p>{tentativas}</p>
+              <h4>Success</h4>
+              <p style={{color:"#10B981"}}>{success}</p>
+              <h4>Failures</h4>
+              <p style={{color:"#EF4444"}}>{failure}</p>
 
+            </div>
           </div>
+
         </div>
+
       </div>
       <footer>
         <div className='donation'>
