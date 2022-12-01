@@ -4,7 +4,7 @@ import championsSword from "./items-image/Champions-blade.png";
 import tidalSword from "./items-image/Tidal-blade.png";
 import divineSword from "./items-image/Divine-blade.png";
 import infinitySword from "./items-image/Infinity-blade.png";
-import heroSword from "./items-image/Hero-blade.png";
+import heroSword from "./items-image/Hero-Blade.png";
 import chronosSword from "./items-image/Chronos-blade.png";
 import demonSword from "./items-image/Demon-blade.png";
 import milkyWaySword from "./items-image/Milky-way-blade.png";
