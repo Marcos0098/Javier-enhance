@@ -27,6 +27,7 @@
 }
 
 .container-item-selector h2{
+  text-align: center;
   font-size: 35px;
   color: #9F4FF1;
 }
@@ -319,5 +320,27 @@ input[type=number]::-webkit-outer-spin-button {
   .item-enchant{
     width: 80%;
     margin: auto;
+  }
+
+  .container-item-selector{
+    margin: 0;
+  }
+
+  .item-enchant{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2%;
+  }
+
+  .container-item-top button{
+    height: 100px;
+    padding: 0px 40px;
+  }
+
+  .donation img{
+    margin: 10px 10px;
+    width: 140px;
   }
 }
